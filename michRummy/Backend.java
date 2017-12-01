@@ -1,3 +1,5 @@
+// MADE BY JONAHTAN MCCANN Fall 2017 ALL ORIGINAL WORK
+
 package michRummy;
 
 import java.util.concurrent.ThreadLocalRandom;
