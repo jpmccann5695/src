@@ -4,6 +4,7 @@ package michRummy;
 
 import java.util.concurrent.ThreadLocalRandom;
 
+import generic.Card;
 import generic.Deck;
 import generic.Hand;
 import generic.Player;
@@ -28,7 +29,7 @@ public class Backend {
 	}
 	
 	void playHand(){
-		boolean complete
+		boolean complete = false;
 		if(hand >12){
 			return;
 		}
@@ -38,7 +39,19 @@ public class Backend {
 		ai1.setHand(new Hand(hand,deal));
 		ai2.setHand(new Hand(hand,deal));
 		ai3.setHand(new Hand(hand,deal));
-		
-		while()
+		int currentPlayer = dealer;
+		while(!complete) {
+			if(currentPlayer == 0) {
+				System.out.println("Would you like the " + discard.topCardToString() + "?\n");
+				
+			}
+			else {
+				discard.addCardTop(aiTurn(currentPlayer));
+			}
+			currentPlayer=(currentPlayer+1)%4;
+		}
+	}
+	Card aiTurn(int ai) {
+		return null;
 	}
 }
