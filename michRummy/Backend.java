@@ -1,6 +1,5 @@
 package michRummy;
 
-import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
 import generic.Deck;
@@ -78,16 +77,24 @@ public class Backend {
 			
 		}
 		else {
-			for(int i = 1; i< valueCount.length; i++) {
+			for(int i = 1; i< 12; i++) { //on the ace search if there is up to 5
+				boolean fourFlag = false;
+				boolean fiveFlag = false;
 				if(i==1) {
+					for(int j = 1; j<5; j++) {
+						if(valueCount[i+j]==0)
+							break;
+						else if(j == 3)
+							
+					}
+				}
+				else if(valueCount[i] >1 && i!=11 ){
 					
 				}
-				if(valueCount[i] >1){
+				else if(valueCount[11] >1) {
 					
 				}
-				else {
-					
-				}
+				
 			}
 		}
 		return count;
