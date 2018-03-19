@@ -1,10 +1,8 @@
-// MADE BY JONAHTAN MCCANN Fall 2017 ALL ORIGINAL WORK
-
 package michRummy;
 
+import java.util.ArrayList;
 import java.util.concurrent.ThreadLocalRandom;
 
-import generic.Card;
 import generic.Deck;
 import generic.Hand;
 import generic.Player;
@@ -13,7 +11,8 @@ public class Backend {
 
 	Deck deal, discard;
 	Player user, ai1, ai2,ai3;
-	int userScore, ai1Score, ai2Score, ai3Score, dealer,hand;
+	int userScore, ai1Score, ai2Score, ai3Score, dealer,level;
+	boolean gameOver;
 	
 	void newGame(){
 		ai1 = new Player("AI West");
@@ -25,33 +24,98 @@ public class Backend {
 		ai2Score = 0;
 		ai3Score = 0;
 		dealer = ThreadLocalRandom.current().nextInt(0, 4);		
-		hand = 6;
+		level = 6;
+		gameOver = false;
 	}
 	
 	void playHand(){
 		boolean complete = false;
-		if(hand >12){
+		if(level >12){
+			gameOver = true;
 			return;
 		}
 		deal = new Deck('m');
 		deal.shuffle();
-		user.setHand(new Hand(hand,deal));
-		ai1.setHand(new Hand(hand,deal));
-		ai2.setHand(new Hand(hand,deal));
-		ai3.setHand(new Hand(hand,deal));
-		int currentPlayer = dealer;
-		while(!complete) {
-			if(currentPlayer == 0) {
-				System.out.println("Would you like the " + discard.topCardToString() + "?\n");
-				
-			}
-			else {
-				discard.addCardTop(aiTurn(currentPlayer));
-			}
-			currentPlayer=(currentPlayer+1)%4;
-		}
+		user.setHand(new Hand(level,deal));
+		ai1.setHand(new Hand(level,deal));
+		ai2.setHand(new Hand(level,deal));
+		ai3.setHand(new Hand(level,deal));
+		
+//		while(1) {
+//			
+//		}
 	}
-	Card aiTurn(int ai) {
-		return null;
+
+	int bookCount(Hand check) {
+		int count = 0;
+		int[] valueCount = check.valueCount();
+		if(valueCount[0]>0) {
+			int tempJoker = valueCount[0];
+			for(int i = 1; i< valueCount.length; i++) {
+				if(valueCount[i]>2) {
+					count++;
+				}
+				else if(valueCount[i]>1) {
+					if(tempJoker>0) {
+						tempJoker--;
+						count++;
+					}
+				}
+			}
+		}
+		else {
+			for(int i = 1; i< valueCount.length; i++) {
+				if(valueCount[i]>2)
+					count++;
+			}
+		}
+		return count;
+	}
+	int runCount(Hand check) {
+		int count = 0;
+		int[] valueCount = check.valueCount();
+		if(valueCount[0]>0) {
+			
+		}
+		else {
+			for(int i = 1; i< valueCount.length; i++) {
+				if(i==1) {
+					
+				}
+				if(valueCount[i] >1){
+					
+				}
+				else {
+					
+				}
+			}
+		}
+		return count;
+	}
+	boolean layableHand(Hand check) {
+		
+		
+		if(level == 6) {
+			
+		}
+		else if(level ==7) {
+			
+		}
+		else if(level == 8) {
+			
+		}
+		else if(level ==9) {
+			
+		}
+		else if(level == 10) {
+			
+		}
+		else if(level == 11) {
+			
+		}
+		else {
+			
+		}
+		return true;
 	}
 }

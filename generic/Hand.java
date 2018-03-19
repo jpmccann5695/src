@@ -1,5 +1,3 @@
-// MADE BY JONAHTAN MCCANN SUMMER 2017 ALL ORIGINAL WORK
-
 package generic;
 
 import java.util.ArrayList;
@@ -27,7 +25,14 @@ public class Hand {
 	public int getSize() {
 		return cardArray.size();
 	}
-
+	public int getAmountOf(int value) {
+		int returner = 0;
+		for(int i = 0 ; i < this.getSize(); i++) {
+			if(this.cardArray.get(i).Value==i)
+				returner++;
+		}
+		return returner;
+	}
 	public void add(Card card) {
 		cardArray.add(card);
 	}
@@ -40,7 +45,15 @@ public class Hand {
 		}
 		return count;
 	}
-
+	
+	public 	int[] valueCount() {
+		this.sortValue();
+		int[] valueCount = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
+		for(int i = 0 ; i< this.getSize(); i++) {
+			valueCount[this.getCardAt(i).Value]++;
+		}
+		return valueCount;
+	}
 	public void sortValue() {
 		for (int i = 1; i < cardArray.size(); i++) {
 			if (cardArray.size() == 1)

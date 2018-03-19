@@ -1,5 +1,3 @@
-// MADE BY JONAHTAN MCCANN SUMMER 2017 ALL ORIGINAL WORK
-
 package generic;
 
 import java.util.ArrayList;
@@ -124,9 +122,6 @@ public class Deck {
 	public void addCard(Card added){
 		this.cardArray.add(added);
 	}
-	public void addCardTop(Card added) {
-		this.cardArray.add(0, added);
-	}
 	public int getSize(){
 		return cardArray.size();
 	}
@@ -165,9 +160,6 @@ public class Deck {
 		Card returner = cardArray.get(0);
 		cardArray.remove(0);
 		return returner;
-	}
-	public String topCardToString() {
-		return cardArray.get(0).toString();
 	}
 	
 }

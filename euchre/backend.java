@@ -1,10 +1,9 @@
-// MADE BY JONAHTAN MCCANN SUMMER 2017 ALL ORIGINAL WORK
-
 package euchre;
 
 import generic.*;
 
 import java.io.IOException;
+import java.util.ArrayList;
 import java.util.Scanner;
 import java.util.concurrent.ThreadLocalRandom;
 import java.util.concurrent.TimeUnit;

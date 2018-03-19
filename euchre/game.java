@@ -1,5 +1,3 @@
-// MADE BY JONAHTAN MCCANN SUMMER 2017 ALL ORIGINAL WORK
-
 package euchre;
 
 import java.io.IOException;
